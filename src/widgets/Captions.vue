@@ -88,7 +88,7 @@ const setCaption = (item: any) => {
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M5 12l5 5l10 -10"></path>
         </svg>
-        <h4>{{ activeLang.off }}</h4>
+        <h4>{{ activeLang?.off || "off" }}</h4>
       </PlBtn>
       <PlBtn
         class="item"
@@ -126,7 +126,7 @@ const setCaption = (item: any) => {
       class="mobile-items"
       v-if="videoInject && videoInject.params && isMobile.any()"
     >
-      <label for="quality"> {{ activeLang.captions }} </label>
+      <label for="quality"> {{ activeLang?.captions || "captions" }} </label>
       <DropDown
         :item-value="'language'"
         :item-title="'language'"
@@ -136,7 +136,7 @@ const setCaption = (item: any) => {
         v-model:value="videoInject.params.activeCaption"
         :can-search="false"
         @change="setCaption"
-        :label="activeLang.off"
+        :label="activeLang?.off || 'off'"
         by-index
       >
       </DropDown>

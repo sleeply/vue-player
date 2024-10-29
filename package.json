@@ -1,16 +1,27 @@
 {
-  "name": "vue-player",
-  "private": true,
-  "version": "0.0.0",
+  "name": "sleeply-vue-player",
+  "version": "0.0.5",
   "type": "module",
+  "main": "./dist/sleeply-vue-player.umd.cjs",
+  "exports": {
+    ".": {
+      "import": "./dist/sleeply-vue-player.js",
+      "require": "./dist/sleeply-vue-player.umd.cjs"
+    }
+  },
+  "style": "dist/styles.css",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc -b && vite build",
+    "build": "vite build && npm publish",
     "preview": "vite preview"
   },
   "dependencies": {
     "hls.js": "^1.5.2-0.canary.9909",
-    "sass": "^1.71.1",
+    "sass": "1.77.6",
+    "vite-plugin-dts": "^4.3.0",
     "vue": "^3.5.12",
     "vue-router": "^4.4.5"
   },
@@ -20,5 +31,22 @@
     "typescript": "~5.6.2",
     "vite": "^5.4.9",
     "vue-tsc": "^2.1.6"
-  }
+  },
+  "author": "Sleeply <sheroff01@mail.ru> (https://github.com/sleeply)",
+  "license": "MIT",
+  "description": "sleeply vue3 player typescript default player",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sleeply/vue-player.git"
+  },
+  "keywords": [
+    "vue3",
+    "vue-player",
+    "vue3-player",
+    "sleeply-vue-player"
+  ],
+  "bugs": {
+    "url": "https://github.com/sleeply/vue-player/issues"
+  },
+  "homepage": "https://github.com/sleeply/vue-player#readme"
 }

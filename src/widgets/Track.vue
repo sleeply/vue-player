@@ -59,7 +59,7 @@ const setTrack = (item: any) => {
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M15 6l-6 6l6 6"></path>
         </svg>
-        {{ activeLang.Back }}
+        {{ activeLang?.Back || 'Back' }}
       </PlBtn>
       <div class="divider"></div>
       <PlBtn
@@ -98,7 +98,7 @@ const setTrack = (item: any) => {
       class="mobile-items"
       v-if="videoInject && videoInject.params && isMobile.any()"
     >
-      <label for="quality"> {{ activeLang.audioTrack }} </label>
+      <label for="quality"> {{ activeLang?.audioTrack || 'audioTrack' }} </label>
       <DropDown
         :item-value="'name'"
         :item-title="'name'"

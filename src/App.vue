@@ -6,20 +6,6 @@ import Player from "./Player.vue";
   <div class="sContainer">
     <Player
       url="https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8"
-      lang="en"
-      :langs="{
-        en: {
-          audioTrack: '',
-          auto: '',
-          Back: '',
-          Cancel: '',
-          captions: '',
-          NotFound: '',
-          off: '',
-          quality: '',
-          Save: '',
-        },
-      }"
     />
   </div>
 </template>

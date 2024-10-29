@@ -61,7 +61,7 @@ onMounted(() => {});
           <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
           <path d="M15 6l-6 6l6 6"></path>
         </svg>
-        {{ activeLang.Back }}
+        {{ activeLang?.Back || "Back" }}
       </PlBtn>
       <div class="divider"></div>
       <PlBtn
@@ -91,7 +91,7 @@ onMounted(() => {});
           <path d="M5 12l5 5l10 -10"></path>
         </svg>
         <h4>
-          {{ activeLang.auto }}
+          {{ activeLang?.auto || "auto" }}
         </h4>
       </PlBtn>
       <PlBtn
@@ -147,7 +147,7 @@ onMounted(() => {});
       class="mobile-items"
       v-if="videoInject && videoInject.params && isMobile.any()"
     >
-      <label for="quality"> {{ activeLang.quality }} </label>
+      <label for="quality"> {{ activeLang?.quality || "quality" }} </label>
       <DropDown
         :item-value="'height'"
         :item-title="'height'"
@@ -160,7 +160,7 @@ onMounted(() => {});
         return-object
         by-index
         @change="setLevel"
-        :label="activeLang.auto"
+        :label="activeLang?.auto || 'auto'"
       >
       </DropDown>
     </div>

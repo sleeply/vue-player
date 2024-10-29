@@ -28,9 +28,9 @@ const activeCaption = computed(
           </svg>
         </div>
         <h4>
-          {{ activeLang.quality }}
+          {{ activeLang?.quality || 'quality' }}
           <span>
-            {{ (activeLevel && activeLevel?.height) || (activeLang.auto) }}
+            {{ (activeLevel && activeLevel?.height) || (activeLang?.auto || 'auto') }}
             <sup v-if="activeLevel">
               {{
                 activeLevel.height >= 720 && activeLevel.height < 1080
@@ -62,9 +62,9 @@ const activeCaption = computed(
           </svg>
         </div>
         <h4>
-          {{ activeLang.audioTrack }}
+          {{ activeLang?.audioTrack || 'audioTrack' }}
           <span>
-            {{ (activeTrack && activeTrack?.name) || (activeLang.auto) }}
+            {{ (activeTrack && activeTrack?.name) || (activeLang?.auto || 'auto') }}
           </span>
         </h4>
       </div>
@@ -80,9 +80,9 @@ const activeCaption = computed(
           </svg>
         </div>
         <h4>
-          {{ activeLang.captions }}
+          {{ activeLang?.captions || 'captions' }}
           <span>
-            {{ (activeCaption && activeCaption.language) || (activeLang.off )}}
+            {{ (activeCaption && activeCaption.language) || (activeLang?.off || 'off' )}}
           </span>
         </h4>
       </div>
